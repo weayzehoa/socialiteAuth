@@ -64,6 +64,17 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group row mt-3">
+                            <div class="col-md-3 offset-md-3">
+                                <a href="{{url('/login/google')}}" class="btn btn-danger">Google+</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="{{url('/login/facebook')}}" class="btn btn-primary">Facebook</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="{{url('/login/github')}}" class="btn btn-secondary">Github</a>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
