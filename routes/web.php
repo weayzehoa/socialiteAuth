@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//訪客身分使用第三方登入路由
+//訪客身分使用第三方登入路由，利用 {provider} 將所有的第三方登入共用同一個 redirect function
 Route::prefix('login')->group(function(){
     Route::get('{provider}', 'Auth\SocialController@redirect');
     Route::get('{provider}/callback', 'Auth\SocialController@callback');
