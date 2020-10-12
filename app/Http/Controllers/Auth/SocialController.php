@@ -10,9 +10,8 @@ use Session;
 class SocialController extends Controller
 {
     /**
-     * Create a redirect method to facebook api.
-     *
-     * @return void
+     * Create a redirect method to provider api.
+     * 利用 Session 來傳遞 provider 變數
      */
     public function redirect($request)
     {
@@ -20,9 +19,9 @@ class SocialController extends Controller
         return Socialite::driver($request)->redirect();
     }
     /**
-    * Return a callback method from facebook api.
-    *
-    * @return callback URL from facebook
+    * Return a callback method from provider api.
+    * 透過 Session 找出 provider 變數並提供給 Socialite Class 使用
+    * @return callback URL from provider
     */
     public function callback(SocialAccountService $service)
     {
