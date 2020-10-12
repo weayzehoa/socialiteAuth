@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//訪客身分使用第三方登入路由
+Route::prefix('login')->group(function(){
+    Route::get('{provider}', 'Auth\SocialController@redirect');
+    Route::get('{provider}/callback', 'Auth\SocialController@callback');
+});
